@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   root 'users#index'
   get 'recipe/index'
   get 'recipe/new'
+  post 'recipe/create'
 end
