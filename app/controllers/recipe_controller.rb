@@ -1,6 +1,6 @@
 class RecipeController < ApplicationController
   def index
-    @recipes = Recipe.where(owner_id: User.first.id)
+    @recipes = Recipe.where(owner_id: current_user.id)
   end
 
   def new
@@ -10,7 +10,7 @@ class RecipeController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
 
-    @recipe.owner_id = User.first.id
+    @recipe.owner_id = current_user.id
 
     if @recipe.save
       redirect_to recipe_index_path
