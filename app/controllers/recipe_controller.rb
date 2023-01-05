@@ -1,5 +1,6 @@
 class RecipeController < ApplicationController
   def index
+    @recipes = Recipe.where(owner_id: User.first.id)
   end
 
   def new
