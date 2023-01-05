@@ -20,7 +20,8 @@ class RecipeController < ApplicationController
   end
 
   def destroy
-    Recipe.find_by(id: params[:id]).destroy
+    @recipe = Recipe.find_by(id: params[:id])
+    @recipe.destroy if (@recipe.owner_id = current_user.id)
     redirect_to recipe_index_path
   end
 
