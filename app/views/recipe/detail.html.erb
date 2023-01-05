@@ -9,4 +9,34 @@
   <% else %>
     <button class="status private">Private</button>
   <% end %>
+
+  <%= link_to "Generate shopping list", recipe_detail_path(current_user.id), class: "button", method: :get %>
+  <%#= link_to "Generate shopping list", recipe_detail_path(current_user.id), class: "button", method: :get %>
+  <%= link_to "Add ingredient", recipe_detail_path(@recipe.id), class: "button", method: :get %>
+
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Food</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Value</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @recipe_food.each do |recipe_food| %>
+          <tr>
+            <td><%= recipe_food.name %></td>
+            <td><%= recipe_food.quantity%> <%= recipe_food.measurement_unit %></td>
+            <td><%= recipe_food.quantity*recipe_food.price%></td>
+            <td>
+              <%= link_to "Modify", recipe_detail_path(id: recipe_food.id), method: :delete %>
+              <%= link_to "Remove", recipe_detail_path(id: recipe_food.id), method: :delete %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
