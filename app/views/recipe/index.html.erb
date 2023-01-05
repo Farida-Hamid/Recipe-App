@@ -2,6 +2,7 @@
   <% @recipes.each do |recipe| %>
     <h3><%= recipe.name  %></h3>
     <p><%= recipe.description %></p>
+    <%= link_to "Remove", delete_recipe_path(id: recipe.id), method: :delete %>
   <% end %>
 
 <%= link_to "Add recipe", recipe_new_path %>
