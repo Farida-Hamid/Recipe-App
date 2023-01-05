@@ -41,3 +41,19 @@ form {
   font-size: medium;
   padding: 3%;
 }
+
+.status {
+  color: white;
+  border-radius: 5px;
+  font-size: medium;
+  height: 30px;
+  border: none;
+}
+
+.public {
+  background-color: green;
+}
+
+.private {
+  background-color: red;
+}

@@ -1,1 +1,12 @@
-<h1>Recipe <%= @recipe.id%></h1>
+<div>
+  <h1>Recipe: <%= @recipe.name%></h1>
+  <h3>Preparation time: <%= @recipe.preparation_time%> hours</h3>
+  <h3>Cooking time: <%= @recipe.cooking_time%> hours</h3>
+  <h3>Steps:</h3>
+  <%= @recipe.description%>
+  <% if @recipe.public %>
+    <button class="status public">Public</button>
+  <% else %>
+    <button class="status private">Private</button>
+  <% end %>
+</div>
