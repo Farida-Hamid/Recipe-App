@@ -1,0 +1,43 @@
+.recpie_container {
+  width: 80%;
+  border: 2px solid;
+  display: flex;
+  justify-content: space-around;
+  padding: 2%;
+  margin: 5% auto;
+}
+
+.description {
+  width: 70%;
+}
+
+.name-remove {
+  text-align: center;
+}
+
+.button {
+  font-size: 16px;
+  border: 2px solid black;
+  padding: 1%;
+  box-shadow: 5px 5px 0 0 black;
+  display: block;
+  width: fit-content;
+  margin: 3% auto;
+  background: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+  margin: 10% auto;
+}
+
+.field {
+  width: 98%;
+  border: 2px solid;
+  margin: 2% 0;
+  font-size: medium;
+  padding: 3%;
+}
