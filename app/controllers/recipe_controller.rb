@@ -31,6 +31,9 @@ class RecipeController < ApplicationController
     redirect_to recipe_index_path
   end
 
+  def add_ingredient
+  end
+
   private
 
   def recipe_params
