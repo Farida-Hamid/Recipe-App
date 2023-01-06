@@ -11,7 +11,6 @@
   <% end %>
 
   <%= link_to "Generate shopping list", recipe_detail_path(current_user.id), class: "button", method: :get %>
-  <%#= link_to "Generate shopping list", recipe_detail_path(current_user.id), class: "button", method: :get %>
   <%= link_to "Add ingredient", recipe_add_ingredient_path(@recipe.id), class: "button", method: :get %>
 
   <div>
@@ -25,11 +24,11 @@
         </tr>
       </thead>
       <tbody>
-        <% @recipe_food.each do |recipe_food| %>
+        <% @recipe_foods.each do |recipe_food| %>
           <tr>
-            <td><%= recipe_food.name %></td>
-            <td><%= recipe_food.quantity%> <%= recipe_food.measurement_unit %></td>
-            <td><%= recipe_food.quantity*recipe_food.price%></td>
+            <td><%= recipe_food.foods.name%></td>
+            <td><%= recipe_food.quantity %></td>
+            <td><%= recipe_food.foods.price%>$</td>
             <td>
               <%= link_to "Modify", recipe_detail_path(id: recipe_food.id), method: :delete %>
               <%= link_to "Remove", recipe_detail_path(id: recipe_food.id), method: :delete %>

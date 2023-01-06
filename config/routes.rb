@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'recipe/destroy/:id', to: 'recipe#destroy', as: 'delete_recipe'
   get 'recipe/detail'
   get 'recipe/add_ingredient/:id', to: "recipe#add_ingredient", as: "recipe_add_ingredient"
+  post 'recipe/create_ingredient/:id', to: "recipe#create_ingredient", as: "recipe_create_ingredient"
 end
