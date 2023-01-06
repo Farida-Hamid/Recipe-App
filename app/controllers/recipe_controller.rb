@@ -6,6 +6,7 @@ class RecipeController < ApplicationController
   def detail
     @recipe = Recipe.find(params[:id])
     @recipe_foods = RecipeFood.where(recipe_id: params[:id]).includes(:foods)
+    @reload_id = current_user.id
   end
 
   def new
