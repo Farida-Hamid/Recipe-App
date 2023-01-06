@@ -81,7 +81,8 @@ table {
   padding: 8px;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -90,4 +91,4 @@ hr {
   margin-bottom: 7%;
 }
 
-tr:nth-child(even){background-color: #f2f2f2;}
+tr:nth-child(even) { background-color: #f2f2f2; }

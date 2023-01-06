@@ -38,12 +38,13 @@ class RecipeController < ApplicationController
   end
 
   def create_ingredient
-    @ingredient = RecipeFood.new(quantity: ingredient_params[:quantity], recipe_id: params[:id], food_id: ingredient_params[:food])
+    @ingredient = RecipeFood.new(quantity: ingredient_params[:quantity], recipe_id: params[:id],
+                                 food_id: ingredient_params[:food])
 
     if @ingredient.save
       redirect_to recipe_detail_path(id: params[:id])
     else
-      render :new, alert: 'Something went wrong!' 
+      render :new, alert: 'Something went wrong!'
     end
   end
 
