@@ -53,3 +53,13 @@ a {
 ul a:hover {
   color: dimgrey;
 }
+
+.user_list--link {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  justify-content: space-between;
+  border: 2px solid black;
+  margin-bottom: 1rem;
+}
+
