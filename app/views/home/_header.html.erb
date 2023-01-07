@@ -1,15 +1,18 @@
-<nav>
-  <div class='menue'>
-    <%= link_to 'Recipe App', root_path, class: 'home-button' %>
-    <ul>
-      <li><%= link_to 'Food', foods_path %></li>
-      <li><%= link_to 'Recipe', recipes_path %></li>
-      <li><%= link_to 'Public Recipe', root_path %></li>
-      <li><%= link_to 'General shopping list ', shoppings_path %></li>
-    </ul>
-  </div>
-  <p style="float:right">
-    Logged in as 
-    <%# <strong><%= current_user.name %></strong> %>
-  </p>
-</nav>
+ <% if user_signed_in? %>
+  <nav>
+    <div class='menue'>
+      <%= link_to 'Recipe App', root_path, class: 'home-button' %>
+      <ul>
+        <li><%= link_to 'Food', foods_path %></li>
+        <li><%= link_to 'Recipe', recipes_path %></li>
+        <li><%= link_to 'Public Recipe', root_path %></li>
+        <li><%= link_to 'General shopping list ', shoppings_path %></li>
+      </ul>
+    </div>
+    <p style="float:right">
+      Logged in as 
+      <strong><%= current_user.name %></strong>
+    </p>
+  </nav>
+  <%= button_to 'Logout out', destroy_user_session_path, method: :delete, class: 'home-button' %>
+<% end %>
