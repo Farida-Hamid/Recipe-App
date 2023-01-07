@@ -8,6 +8,7 @@
 # first_user = User.create(name: 'Farida', role: 'admin')
 # second_user = User.create(name: 'Guest', role: 'guest')
 # third_user = User.create(name: 'Aakash', role: 'user')
+puts 'Seeding to database initiated ...'
 
 first_user = User.create(name: 'Farida', email: 'farida@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', role: 'admin')
 second_user = User.create(name: 'Guest', email: 'guest@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', role: 'guest')
@@ -30,3 +31,5 @@ recipe_food_3 = RecipeFood.create(quantity: 8, recipe: recipe_1, food: food_2)
 recipe_food_4 = RecipeFood.create(quantity: 7, recipe: recipe_2, food: food_1)
 recipe_food_5 = RecipeFood.create(quantity: 11, recipe: recipe_3, food: food_2)
 recipe_food_6 = RecipeFood.create(quantity: 2, recipe: recipe_4, food: food_3)
+
+puts 'Data successfully seeded to database'
