@@ -9,6 +9,10 @@ class RecipesController < ApplicationController
     @reload_id = current_user.id
   end
 
+  def show
+    @recipes = Recipe.where(user_id: params[:user_id])
+  end
+
   def new
     @recipe = Recipe.new
   end

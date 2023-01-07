@@ -1,0 +1,39 @@
+.user_list {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  border: 2px solid black;
+  margin-bottom: 1rem;
+}
+
+.user_list--link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-show--column {
+  width: 50%;
+  margin: auto;
+  border: 2px solid black;
+  color: black;
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user {
+  font-size: 1.75rem;
+}
+
+.see-btn {
+  font-size: 16px;
+  border: 2px solid black;
+  padding: 1%;
+  box-shadow: 5px 5px 0 0 black;
+  display: block;
+  height: fit-content;
+  background: white;
+}
+
