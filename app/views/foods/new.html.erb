@@ -1,0 +1,25 @@
+<div>
+  <%= form_with model: @new_recipe, url: '/foods', method: :post, local: true, scope: :new_food do |f| %>
+    <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class:"field"%>
+    </div>
+
+    <div>
+    <%= f.label :measurement_unit %> in (kilograms, grams, etc)<br>
+    <%= f.text_field  :measurement_unit, class:"field"%>
+    </div>
+
+    <div>
+    <%= f.label :quantity %> in numeric<br>
+    <%= f.number_field :quantity, class:"field"%>
+    </div>
+
+     <div>
+    <%= f.label :price %> in decimal numeric<br>
+    <%= f.text_field :price, class:"field"%>
+    </div>
+
+    <%= f.submit "Add Food", class: "button"%>
+  <% end %>
+<div>

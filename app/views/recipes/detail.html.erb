@@ -5,7 +5,7 @@
     <div>
       <h3>Preparation time: <%= @recipe.preparation_time%> hours</h3>
       <h3>Cooking time: <%= @recipe.cooking_time%> hours</h3>
-      <h3>Steps:</h3>
+      <h3>Description:</h3>
       <%= @recipe.description%>
     </div>
     <div>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="detail-top">
-    <%= link_to "Generate shopping list", root_path, class: "button", method: :get %>
+    <%= link_to "Generate shopping list", shoppings_path, class: "button", method: :get %>
     <%= link_to "Add ingredient", recipe_add_ingredient_path(@recipe.id), class: "button", method: :get %>
   </div>
   <hr>
@@ -34,9 +34,9 @@
     <tbody>
       <% @recipe_foods.each do |recipe_food| %>
         <tr>
-          <td><%= recipe_food.foods.name%></td>
+          <td><%= recipe_food.food.name%></td>
           <td><%= recipe_food.quantity %></td>
-          <td><%= recipe_food.foods.price%>$</td>
+          <td><%= recipe_food.food.price%>$</td>
           <td>
             <%= link_to "Modify", root_path %>
             <%= link_to "Remove", root_path %>

@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  user = User.create(name: 'Farida', email: 'farida@gmail.com', password: 'topsecret',
-                     password_confirmation: 'topsecret', role: 'admin')
+  user = User.new(name: 'Farida', email: 'farida@gmail.com', password: 'topsecret',
+                  password_confirmation: 'topsecret', role: 'admin')
 
-  subject { Food.new(name: 'apple', measurement_unit: 'grams', price: 2.15, user_id: user.id, quantity: 12) }
-
-  before { subject.save }
+  subject { Food.new(name: 'apple', measurement_unit: 'grams', price: 2.15, user:, quantity: 12) }
 
   it 'name should be present' do
     subject.name = nil

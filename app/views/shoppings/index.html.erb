@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag "shopping" %>
+<div class="shopping-container">
+  <h1>Shopping List</h1>
+  <div class="description">
+    <h3>Items to buy : <%= @amount_of_food %></h3>
+    <h3>Total Value Needed : $<%= @total %></h3>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe_foods_arr.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+          <td><%= recipe_food.food.price * recipe_food.quantity %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

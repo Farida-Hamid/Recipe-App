@@ -1,0 +1,19 @@
+.food-container {
+  width: 70%;
+  margin: auto;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.food_add--btn {
+  font-size: 16px;
+  border: 2px solid black;
+  padding: 1%;
+  box-shadow: 5px 5px 0 0 black;
+  display: block;
+  width: fit-content;
+  align-self: flex-end;
+  background: white;
+}

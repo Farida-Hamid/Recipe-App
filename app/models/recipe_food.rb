@@ -1,6 +1,15 @@
 class RecipeFood < ApplicationRecord
-  belongs_to :recipes, class_name: 'Recipe', foreign_key: :recipe_id
-  belongs_to :foods, class_name: 'Food', foreign_key: :food_id
+  belongs_to :recipe
+  belongs_to :food
+  after_save :food_counter
+  after_destroy :food_counter
 
   validates :quantity, presence: true
+
+  protected
+
+  def food_counter
+    @recipe_foods = RecipeFood.where(recipe_id: recipe.id)
+    recipe.update(recipe_food_counter: @recipe_foods.all.length)
+  end
 end

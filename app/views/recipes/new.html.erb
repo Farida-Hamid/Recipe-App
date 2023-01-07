@@ -1,5 +1,5 @@
 <div>
-  <%= form_with model: @new_recipe, url: recipe_create_path, method: :post, local: true, scope: :new_recipe do |f| %>
+  <%= form_with model: @new_recipe, url: '/recipes', method: :post, local: true, scope: :new_recipe do |f| %>
     <div>
     <%= f.label :name %><br>
     <%= f.text_field :name, class:"field"%>
@@ -16,7 +16,7 @@
     </div>
 
     <div>
-    <%= f.label :description %><br>
+    <%= f.label :description %> (It should be more than 15 characters)<br>
     <%= f.text_area :description, class:"field"%>
     </div>
 
