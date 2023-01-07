@@ -32,7 +32,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find_by(id: params[:id])
-    @recipe.destroy if (@recipe.user == current_user)
+    @recipe.destroy if @recipe.user == current_user
     redirect_to recipes_path
   end
 

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Foods", type: :feature do
+RSpec.describe 'Foods', type: :feature do
   describe 'index page' do
     before(:each) do
-      user = User.create(name: 'Farida', email: 'farida@gmail.com', password: 'topsecret')
+      @user = User.create(name: 'Farida', email: 'farida@gmail.com', password: 'topsecret')
 
       @food1 = Food.create(name: 'Nyama choma', measurement_unit: 'Kilogrammes', price: 800, quantity: 1)
       @food2 = Food.create(name: 'Chips', measurement_unit: 'Pounds', price: 150, quantity: 0.5)
@@ -13,19 +13,19 @@ RSpec.describe "Foods", type: :feature do
       visit foods_path
     end
     scenario 'can see the foods name' do
-      @foods.each do |user|
+      @foods.each do |_user|
         expect(page).to have_content(food.name)
       end
     end
 
     scenario 'can see the foods prices' do
-      @foods.each do |user|
+      @foods.each do |_user|
         expect(page).to have_content(food.price)
       end
     end
-    
+
     scenario 'can see the food quantity' do
-      @foods.each do |user|
+      @foods.each do |_user|
         expect(page).to have_content(food.quantity)
       end
     end

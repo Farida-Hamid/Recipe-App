@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RecipeFood, type: :model do
   user = User.new(name: 'Farida', email: 'farida7875@gmail.com', password: 'topsecret',
-    password_confirmation: 'topsecret', role: 'admin')
+                  password_confirmation: 'topsecret', role: 'admin')
 
   recipe = Recipe.new(name: 'Aloo ka prantha', description: 'Indian Aloo prantha must try', user_id: user.id)
   food = Food.new(name: 'Apple', measurement_unit: 'grams', price: 12.25)
