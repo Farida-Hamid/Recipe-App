@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root 'users#index'
-  get 'recipe/index'
-  get 'recipe/new'
-  post 'recipe/create'
-  get 'recipe/destroy/:id', to: 'recipe#destroy', as: 'delete_recipe'
-  get 'recipe/detail'
-  get 'recipe/add_ingredient/:id', to: "recipe#add_ingredient", as: "recipe_add_ingredient"
-  post 'recipe/create_ingredient/:id', to: "recipe#create_ingredient", as: "recipe_create_ingredient"
+  get 'recipes/index'
+  get 'recipes/new'
+  post 'recipes/create'
+  get 'recipes/destroy/:id', to: 'recipes#destroy', as: 'delete_recipe'
+  get 'recipes/detail'
+  get 'recipes/add_ingredient/:id', to: "recipes#add_ingredient", as: "recipe_add_ingredient"
+  post 'recipes/create_ingredient/:id', to: "recipes#create_ingredient", as: "recipe_create_ingredient"
 end

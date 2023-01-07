@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.where(owner_id: current_user.id)
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 
   def detail
     @recipe = Recipe.find(params[:id])
-    @recipe_foods = RecipeFood.where(recipe_id: params[:id]).includes(:foods)
+    @recipe_foods = RecipeFood.where(recipe_id: params[:id]).includes(:food)
     @reload_id = current_user.id
   end
 
@@ -16,19 +16,20 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
 
-    @recipe.owner_id = current_user.id
+    @recipe.user_id = current_user.id
 
     if @recipe.save
-      redirect_to recipe_index_path
+      redirect_to recipes_index_path
     else
+
       render :new
     end
   end
 
   def destroy
     @recipe = Recipe.find_by(id: params[:id])
-    @recipe.destroy if (@recipe.owner_id = current_user.id)
-    redirect_to recipe_index_path
+    @recipe.destroy if (@recipe.user_id = current_user.id)
+    redirect_to recipes_index_path
   end
 
   def add_ingredient
