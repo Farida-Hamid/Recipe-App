@@ -19,6 +19,18 @@ class FoodsController < ApplicationController
     end
   end
 
+  def destroy
+    @food = Food.find(food_params)
+
+    @food.user_id = current_user.id
+
+    if @food.save
+      redirect_to foods_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def food_params
