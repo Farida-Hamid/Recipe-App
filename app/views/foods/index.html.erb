@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag "food" %>
+<div class="food-container">
+  <%= link_to 'Add Food', new_food_path, class: 'food_add--btn' %>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name%></td>
+          <td><%= food.quantity %></td>
+          <td>$<%= food.price%></td>
+          <td>
+            <%= link_to "Remove", root_path %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

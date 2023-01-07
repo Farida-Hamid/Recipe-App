@@ -1,0 +1,94 @@
+.recpie_container {
+  width: 80%;
+  border: 2px solid;
+  display: flex;
+  justify-content: space-around;
+  padding: 2%;
+  margin: 5% auto;
+}
+
+.description {
+  width: 70%;
+}
+
+.name-remove {
+  text-align: center;
+}
+
+.button {
+  font-size: 16px;
+  border: 2px solid black;
+  padding: 1%;
+  box-shadow: 5px 5px 0 0 black;
+  display: block;
+  width: fit-content;
+  margin: 3% auto;
+  background: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+  margin: 10% auto;
+}
+
+.field {
+  width: 98%;
+  border: 2px solid;
+  margin: 2% 0;
+  font-size: medium;
+  padding: 3%;
+}
+
+.status {
+  color: white;
+  border-radius: 5px;
+  font-size: medium;
+  height: 30px;
+  border: none;
+  margin-top: 20px;
+}
+
+.public {
+  background-color: green;
+}
+
+.private {
+  background-color: red;
+}
+
+.detail-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 5% 0;
+}
+
+.detail {
+  width: 70%;
+  margin: 10% auto;
+}
+
+.detail-top .button {
+  margin: 7% 0 1% 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+hr {
+  margin-bottom: 7%;
+}
+
+tr:nth-child(even) { background-color: #f2f2f2; }

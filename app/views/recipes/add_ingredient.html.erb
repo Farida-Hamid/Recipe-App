@@ -1,0 +1,8 @@
+<div>
+    <%= form_with model: @recipe_food, url: recipe_create_ingredient_path(id: @recipe_id), method: :post, local: true, class: "form", scope: :new_recipe_food do |f| %>
+        <%= f.label :Quantity %><br>
+        <%= f.number_field :quantity %>
+        <%= f.select :food, @foods %>
+        <%= f.submit "Add ingredient"%>
+    <% end %>
+</div>
