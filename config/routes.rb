@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :foods
+  resources :shoppings
   resources :recipes, only: [:index, :new, :create]
   # get 'recipes/new'
   # post 'recipes/create'

@@ -1,0 +1,15 @@
+.shopping-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+}
+
+.description {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
