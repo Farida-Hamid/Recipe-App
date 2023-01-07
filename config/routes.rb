@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :users do
     resources :recipes
   end
+
+  resources :foods
   get 'recipes/index'
   get 'recipes/new'
   post 'recipes/create'
