@@ -1,1 +1,9 @@
-<h1>Welcome User</h1>
+<ul class="userContainerList">
+  <% @users.each do |user| %>
+    <li class="user_list">
+      <%= user.name %>
+      <%= user.recipe_counter %>
+
+    </li>
+  <% end %>
+</ul>

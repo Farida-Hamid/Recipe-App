@@ -1,11 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
-  user = User.create(name: 'Farida', email: 'farida@gmail.com', password: 'topsecret',
-                     password_confirmation: 'topsecret', role: 'admin')
+  user = User.new(name: 'Farida', email: 'farida2@gmail.com', password: 'topsecret',
+                  password_confirmation: 'topsecret', role: 'admin')
   subject { Recipe.new(name: 'Aloo ka prantha', description: 'Indian Aloo prantha must try', user:) }
-
-  before { subject.save }
 
   it 'name should be present' do
     subject.name = nil
