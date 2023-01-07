@@ -5,9 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-first_user = User.create(name: 'Farida', role: 'admin')
-second_user = User.create(name: 'Guest', role: 'guest')
-third_user = User.create(name: 'Aakash', role: 'user')
+# first_user = User.create(name: 'Farida', role: 'admin')
+# second_user = User.create(name: 'Guest', role: 'guest')
+# third_user = User.create(name: 'Aakash', role: 'user')
+
+first_user = User.create(name: 'Farida', email: 'farida@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', role: 'admin')
+second_user = User.create(name: 'Guest', email: 'guest@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', role: 'guest')
+third_user = User.create(name: 'Aakash', email: 'skybrel@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', role: 'user')
+
 
 recipe_1 = Recipe.create(name: 'Sweet Potato Dum 1', preparation_time: 25.5, cooking_time: 20.05, description: 'It is very easy, delicious and powerful dish famous in Asia.', public: true, user: first_user)
 recipe_2 = Recipe.create(name: 'Sweet Potato Dum 2', preparation_time: 25.5, cooking_time: 20.05, description: 'It is very easy, delicious and powerful dish famous in Asia.', public: false, user: first_user)
