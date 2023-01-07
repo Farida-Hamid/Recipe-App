@@ -1,0 +1,15 @@
+<nav>
+  <div class='menue'>
+    <%= link_to 'Recipe App', root_path, class: 'home-button' %>
+    <ul>
+      <li><%= link_to 'Food', root_path %></li>
+      <li><%= link_to 'Recipe', recipe_index_path %></li>
+      <li><%= link_to 'Public Recipe', root_path %></li>
+      <li><%= link_to 'General shopping list ', root_path %></li>
+    </ul>
+  </div>
+  <p style="float:right">
+    Logged in as 
+    <strong><%= current_user.name %></strong>
+  </p>
+</nav>
