@@ -20,10 +20,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_05_080643) do
     t.integer "price"
     t.integer "quantity", limit: 2
     t.integer "recipe_food_counter", default: 0
-    t.bigint "owner_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_foods_on_owner_id"
+    t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
   create_table "recipe_foods", force: :cascade do |t|
@@ -41,17 +41,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_05_080643) do
     t.float "preparation_time"
     t.float "cooking_time"
     t.text "description"
-    t.boolean "public"
+    t.boolean "public", default: false
     t.integer "recipe_food_counter", default: 0
-    t.bigint "owner_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_recipes_on_owner_id"
+    t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "role"
+    t.string "role", default: "guest"
     t.integer "food_counter", default: 0
     t.integer "recipe_counter", default: 0
     t.datetime "created_at", null: false
@@ -70,8 +70,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_05_080643) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "foods", "users", column: "owner_id"
-  add_foreign_key "recipe_foods", "foods"
-  add_foreign_key "recipe_foods", "recipes"
-  add_foreign_key "recipes", "users", column: "owner_id"
+  add_foreign_key "foods", "users", on_delete: :cascade
+  add_foreign_key "recipe_foods", "foods", on_delete: :cascade
+  add_foreign_key "recipe_foods", "recipes", on_delete: :cascade
+  add_foreign_key "recipes", "users", on_delete: :cascade
 end

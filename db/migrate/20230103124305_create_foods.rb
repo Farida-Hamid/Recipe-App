@@ -6,7 +6,7 @@ class CreateFoods < ActiveRecord::Migration[7.0]
       t.integer :price
       t.integer :quantity, limit: 2
       t.integer :recipe_food_counter, default: 0
-      t.references :owner, references: :users, null: false, foreign_key: {to_table: :users}
+      t.references :user, references: :users, null: false, foreign_key: { to_table: :users, on_delete: :cascade }
 
       t.timestamps
     end
