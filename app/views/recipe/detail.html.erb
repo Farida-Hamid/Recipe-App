@@ -1,0 +1,48 @@
+<div><div class="detail">
+  <h1 class="recipe-name">Recipe: <%= @recipe.name%></h1>
+
+  <div class="detail-top">
+    <div>
+      <h3>Preparation time: <%= @recipe.preparation_time%> hours</h3>
+      <h3>Cooking time: <%= @recipe.cooking_time%> hours</h3>
+      <h3>Steps:</h3>
+      <%= @recipe.description%>
+    </div>
+    <div>
+      <% if @recipe.public %>
+        <button class="status public">Public</button>
+      <% else %>
+        <button class="status private">Private</button>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="detail-top">
+    <%= link_to "Generate shopping list", root_path, class: "button", method: :get %>
+    <%= link_to "Add ingredient", recipe_add_ingredient_path(@recipe.id), class: "button", method: :get %>
+  </div>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe_foods.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.foods.name%></td>
+          <td><%= recipe_food.quantity %></td>
+          <td><%= recipe_food.foods.price%>$</td>
+          <td>
+            <%= link_to "Modify", root_path %>
+            <%= link_to "Remove", root_path %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div></div>

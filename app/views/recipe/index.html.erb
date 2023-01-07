@@ -2,7 +2,7 @@
   <% @recipes.each do |recipe| %>
     <div class="recpie_container">
       <div class="name-remove">
-        <h3><%= recipe.name  %></h3>
+        <h2><%= link_to recipe.name , recipe_detail_path(id: recipe.id), method: :get %></h2>
         <%= link_to "REMOVE", delete_recipe_path(id: recipe.id), method: :delete %>
       </div>
       <p class="description"><%= recipe.description %></p>

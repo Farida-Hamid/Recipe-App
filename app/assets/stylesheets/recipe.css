@@ -41,3 +41,54 @@ form {
   font-size: medium;
   padding: 3%;
 }
+
+.status {
+  color: white;
+  border-radius: 5px;
+  font-size: medium;
+  height: 30px;
+  border: none;
+  margin-top: 20px;
+}
+
+.public {
+  background-color: green;
+}
+
+.private {
+  background-color: red;
+}
+
+.detail-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 5% 0;
+}
+
+.detail {
+  width: 70%;
+  margin: 10% auto;
+}
+
+.detail-top .button {
+  margin: 7% 0 1% 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+hr {
+  margin-bottom: 7%;
+}
+
+tr:nth-child(even) { background-color: #f2f2f2; }
