@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   end
 
   resources :foods
-  get 'recipes/index'
-  get 'recipes/new'
-  post 'recipes/create'
+  resources :recipes, only: [:index, :new, :create]
+  # get 'recipes/new'
+  # post 'recipes/create'
   get 'recipes/destroy/:id', to: 'recipes#destroy', as: 'delete_recipe'
   get 'recipes/detail'
   get 'recipes/add_ingredient/:id', to: "recipes#add_ingredient", as: "recipe_add_ingredient"
