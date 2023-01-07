@@ -1,4 +1,4 @@
-# 📖 [Recipe_App] <a name="about-project"></a>
+# 📖 Recipe_App <a name="about-project"></a>
 
 >  The Recipe app keeps track of all your recipes and ingredients. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
@@ -56,14 +56,14 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need: Visual Studio Code and Installed Rails.
+In order to run this project you need: Installed Rails.
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```bash command
-$ git clone $ git clone git@github.com:Farida-Hamid/Recipe-App.git
+git clone git@github.com:Farida-Hamid/Recipe-App.git
 ```
 
 ### Install
@@ -72,6 +72,7 @@ Install this project with:
 
 ```bash command
 cd Recipe-App
+bundle install
 ```
 
 ### Usage
@@ -79,14 +80,14 @@ cd Recipe-App
 To run the project, execute the following command:
 
 ```bash command
-` rails server`
+rails server
 ```
 
 ### Run tests
 
 To run tests, run the following command:
 ```bash command
- rspec
+ rspec spec
 ```
 
 
