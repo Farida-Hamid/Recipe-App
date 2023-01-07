@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :foods
   get 'general_shopping_list', to: 'shoppings#index', as: 'shoppings'
+  get 'public_recipes', to: 'public_recipes#index', as: 'public_recipes'
+
   # resources :shoppings
   resources :recipes, only: [:index, :new, :create]
   # get 'recipes/new'
