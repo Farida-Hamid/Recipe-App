@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Farida', email: 'farida@gmail.com', password: 'topsecret', password_confirmation: 'topsecret', role: 'admin') }
+  subject do
+    User.new(name: 'Farida', email: 'farida@gmail.com', password: 'topsecret', password_confirmation: 'topsecret',
+             role: 'admin')
+  end
 
   before { subject.save }
 
@@ -11,7 +14,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'name should be "Farida"' do
-    expect(subject.name).to eql("Farida")
+    expect(subject.name).to eql('Farida')
   end
 
   it 'email should be present' do
@@ -20,7 +23,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'name should be "farida@gmail.com"' do
-    expect(subject.email).to eql("farida@gmail.com")
+    expect(subject.email).to eql('farida@gmail.com')
   end
 
   it 'role should be "admin"' do
